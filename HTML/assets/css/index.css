@@ -99,3 +99,54 @@ footer {
     height: 590px;
     overflow: hidden;
 }
+/*--------------------------------------------------------------
+# Butao voltar
+--------------------------------------------------------------*/
+button{
+    background-color: var(--white-color) !important;
+    border: none !important;
+    color: var(--black) !important;
+    transition: .5s;
+}
+
+button:hover{
+    background-color: var(--darkiest-color) !important;
+    color: var(--red) !important;
+    border: 1px solid #7c176da6;
+}
+
+  /* Estilos para o menu de seleção */
+  .styled-select {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  .styled-select select {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  /* Estilizando a seta do menu de seleção */
+  .styled-select::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }

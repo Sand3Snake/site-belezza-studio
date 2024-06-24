@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -19,10 +20,64 @@
     <link rel="stylesheet" href="assets/vendors/magnific-popup/magnific-popup.css" />
 
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet"  href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
 
+    <style>
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            padding: 8px;
+            border-radius: 3%;
+            right: 0;
+            /* Alinha o submenu à direita */
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 7px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin: 5px;
+        }
+
+        .dropdown-content a:hover {
+            
+            color: blue;
+            /* Muda a cor da letra para azul ao passar o mouse */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 18px;
+            /* Adiciona padding */
+            text-decoration: none;
+            display: flex;
+            margin: 1px;
+            /* Adiciona a margem */
+            border-radius: 3%;
+
+        }
+
+        .dropdown-content a:hover {            
+            
+            border: #d64783 solid 2px;
+            border-radius: 3%;
+
+        }
+    </style>
+
 </head>
+
 <body>
 
 
@@ -32,17 +87,18 @@
     </a>
     <!-------------------- Scroll-Top Area (End) -------------------->
 
-        
+
 
     <!-------------------- Header Area (Start) -------------------->
     <header class="header">
 
         <!-- Logo -->
         <a class="logo" href="#home" style="display: flex; align-items: center; text-decoration: none;">
-            <img src="assets/images/Home/Logotop.png" alt="About-Image" style="width: 50px; height: 50px; margin-right: 10px;">
+            <img src="assets/images/Home/Logotop.png" alt="About-Image"
+                style="width: 50px; height: 50px; margin-right: 10px;">
             <h2 style="margin: 0; font-size: 24px;">Belezza Studio</h2>
         </a>
-        
+
         <!-- Logo End -->
 
         <!-- Navbar -->
@@ -51,46 +107,76 @@
                 <i class="fas fa-home fa-lg" aria-hidden="true"></i>
                 <a href="#home" style="margin-left: 10px;">Inicio</a>
             </span>
-            
+
             <span style="display: flex; align-items: center; margin-right: 20px;">
                 <i class="fas fa-info-circle fa-lg" aria-hidden="true"></i>
                 <a href="#about" style="margin-left: 10px;">sobre</a>
             </span>
-            
+
             <span style="display: flex; align-items: center; margin-right: 20px;">
                 <i class="fas fa-gavel fa-lg" aria-hidden="true"></i>
                 <a href="#service" style="margin-left: 10px;">Serviço</a>
             </span>
-            
+
             <span style="display: flex; align-items: center; margin-right: 20px;">
                 <i class="fas fa-window-restore fa-lg" aria-hidden="true"></i>
                 <a href="#portfolio" style="margin-left: 10px;">Portfolio</a>
             </span>
-            
+
             <span style="display: flex; align-items: center; margin-right: 20px;">
                 <i class="fa fa-users fa-lg" aria-hidden="true"></i>
                 <a href="#testimonial" style="margin-left: 10px;">Depoimento</a>
             </span>
-            
+
             <span style="display: flex; align-items: center; margin-right: 20px;">
                 <i class="fa fa-file fa-lg" aria-hidden="true"></i>
                 <a href="#blog" style="margin-left: 10px;">Noticias</a>
             </span>
-            
+
             <span style="display: flex; align-items: center; margin-right: 20px;">
                 <i class="fa fa-phone-square fa-lg" aria-hidden="true"></i>
                 <a href="#contact" style="margin-left: 10px;">Contato</a>
             </span>
-            <span style="display: flex; align-items: center; margin-right: 20px;">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <a href="Login.html" style="margin-left: 10px;">Login</a>
-            </span>
-        <!-- Menubar -->
-        <div class="fas fa-bars" id="menu-btn"></div>
-        
+            <div class="dropdown" style="position: relative; display: inline-block;">
+                <span style="display: flex; align-items: center; margin-right: 20px;">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <a href="Login.html" style="margin-left: 10px;">Login</a>
+                </span>
+                <div class="dropdown-content"
+                    style="display: none; position: absolute; background-color: #e3c8fe; width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; padding: 8px; border-radius: 3%;">
+                    <a href="UsuarioIndex.html"
+                        style="padding: 7px; text-decoration: none; display: flex; align-items: center; margin: 5px;">
+                        <i class="fa fa-users" aria-hidden="true" style="margin-right: 8px;"></i>
+                        Usuarios
+                    </a>
+                    <a href="AgendamentoIndex.html"
+                        style="padding: 7px; text-decoration: none; display: flex; align-items: center; margin: 5px;">
+                        <i class="fa fa-calendar" aria-hidden="true" style="margin-right: 8px;"></i>
+                        Agendamento Admin
+                    </a>
+                    <a href="AgendamentoClienteIndex.html"
+                        style="padding: 7px; text-decoration: none; display: flex; align-items: center; margin: 5px;">
+                        <i class="fa fa-calendar" aria-hidden="true" style="margin-right: 8px;"></i>
+                        Agendamento User
+                    </a>
+                    <a href="#settings"
+                        style="padding: 7px; text-decoration: none; display: flex; align-items: center; margin: 5px;">
+                        <i class="fa fa-address-card" aria-hidden="true" style="margin-right: 8px;"></i>
+                        Cadastro Agendamento
+                    </a>
+                    <a href="#logout"
+                        style="padding: 7px; text-decoration: none; display: flex; align-items: center; margin: 5px;">
+                        <i class="fa fa-folder" aria-hidden="true" style="margin-right: 8px;"></i>
+                        Relatório
+                    </a>
+                </div>
+            </div>
+            <!-- Menubar -->
+            <div class="fas fa-bars" id="menu-btn"></div>
+
     </header>
     <!-------------------- Header Area (End) -------------------->
- 
+
 
 
     <!-------------------- Home Area (Start) -------------------->
@@ -100,13 +186,16 @@
 
             <div class="content">
                 <div class="text">
-                    <h2>Olá, seja bem-vindo(a)</h2>!</h1>
-                    <h1>Somos da Belezza Studio e somos profissionais na área de <span class="typing-text">Estética</span></h1>
-                    <p>Nós nos orgulhamos de oferecer uma experiência única, onde cada detalhe é cuidadosamente elaborado para proporcionar aos nossos clientes um refúgio de tranquilidade e rejuvenescimento.</p>
-                    <a href="#" class="btn">about me <i class="fas fa-user"></i></a>
+                    <h2>Olá, seja bem-vindo(a)!</h2>!</h1>
+                    <h1>Somos da Belezza Studio e somos profissionais na área de <span
+                            class="typing-text">Estética</span></h1>
+                    <p>Nós nos orgulhamos de oferecer uma experiência única, onde cada detalhe é cuidadosamente
+                        elaborado para proporcionar aos nossos clientes um refúgio de tranquilidade e rejuvenescimento.
+                    </p>
+                    <a href="#" class="btn">Sobre a empresa <i class="fas fa-user"></i></a>
                 </div>
             </div>
-    
+
             <div class="image">
                 <img src="assets/images/Home/2.png" alt="Home-Image">
             </div>
@@ -127,12 +216,14 @@
             <div class="image">
                 <img src="assets/images/About/OIP (1).jpg" alt="About-Image" />
             </div>
-    
+
             <div class="content">
 
                 <h2>Somos a Belezza Studio.</h2>
-                <p>Sua satisfação e conforto são nossa prioridade número um. Estamos comprometidos em criar um ambiente acolhedor e seguro, onde você possa relaxar, recarregar e sair sentindo-se revigorado e radiante.</p>
-   
+                <p>Sua satisfação e conforto são nossa prioridade número um. Estamos comprometidos em criar um ambiente
+                    acolhedor e seguro, onde você possa relaxar, recarregar e sair sentindo-se revigorado e radiante.
+                </p>
+
                 <div class="about-info">
 
                     <div class="info">
@@ -149,28 +240,28 @@
                             <h1 class="count" data-count="4">4+</h1>
                             <h3>Anos de experiência</h3>
                         </div>
-                        
+
                         <div class="box">
                             <h1 class="count" data-count="100">100+</h1>
                             <h3>Projetos concluídos</h3>
                         </div>
-            
+
                         <div class="box">
                             <h1 class="count" data-count="80">80+</h1>
                             <h3>Clientes satisfeitos</h3>
                         </div>
-                                    
+
                         <div class="box">
                             <h1 class="count" data-count="20">20+</h1>
                             <h3>Total de prêmios ganhos</h3>
                         </div>
-                    
+
                     </div>
 
                 </div>
-                
+
             </div>
-            
+
         </div>
 
         <div class="skill-container">
@@ -178,7 +269,7 @@
             <div class="heading">
                 <h2>minhas <span>habilidades</span></h2>
             </div>
-    
+
             <div class="skills">
                 <div class="skill-item item1">
                     <div class="box">
@@ -194,7 +285,7 @@
                         <div class="progress-bar"> <span></span> </div>
                     </div>
                 </div>
-    
+
                 <div class="skill-item item2">
                     <div class="box">
                         <h3>massagem facial e corporal<span> 75% </span> </h3>
@@ -209,15 +300,15 @@
                         <div class="progress-bar"> <span></span> </div>
                     </div>
                 </div>
-    
+
             </div>
-    
+
         </div>
 
     </section>
     <!-------------------- About Area (End) -------------------->
 
-    
+
 
     <!-------------------- Qualification Area (Start) -------------------->
     <section class="qualification">
@@ -235,25 +326,30 @@
                     <div class="content">
                         <span>2015 - 2016</span>
                         <h3>Experiência em Tratamentos Faciais e Corporais</h3>
-                        <p> Com anos de prática e aprimoramento, o profissional de estética desenvolveu habilidades excepcionais em uma variedade de tratamentos faciais e corporais. .</p>
+                        <p> Com anos de prática e aprimoramento, o profissional de estética desenvolveu habilidades
+                            excepcionais em uma variedade de tratamentos faciais e corporais. .</p>
                     </div>
                 </div>
-    
+
                 <div class="experience-item">
                     <i class="fas fa-graduation-cap"></i>
                     <div class="content">
                         <span>2016 - 2017</span>
                         <h3>Conhecimento em Tecnologias Avançadas</h3>
-                        <p>Mantendo-se atualizado com as últimas tendências e tecnologias em estética, o profissional investe em treinamento contínuo para oferecer tratamentos inovadores aos clientes..</p>
+                        <p>Mantendo-se atualizado com as últimas tendências e tecnologias em estética, o profissional
+                            investe em treinamento contínuo para oferecer tratamentos inovadores aos clientes..</p>
                     </div>
                 </div>
-        
+
                 <div class="experience-item">
                     <i class="fas fa-graduation-cap"></i>
                     <div class="content">
                         <span>2017 - 2018</span>
                         <h3>Atenção Personalizada ao Cliente</h3>
-                        <p>Cada cliente é único, e o profissional de estética compreende isso profundamente. Com uma abordagem personalizada, ele ou ela avalia as necessidades individuais de cada cliente, oferecendo consultas detalhadas e adaptando os tratamentos para garantir a máxima satisfação e resultados excepcionais..</p>
+                        <p>Cada cliente é único, e o profissional de estética compreende isso profundamente. Com uma
+                            abordagem personalizada, ele ou ela avalia as necessidades individuais de cada cliente,
+                            oferecendo consultas detalhadas e adaptando os tratamentos para garantir a máxima satisfação
+                            e resultados excepcionais..</p>
                     </div>
                 </div>
 
@@ -266,28 +362,31 @@
                     <div class="content">
                         <span>2018 - 2019</span>
                         <h3>Habilidades em Design de Sobrancelhas e Maquiagem</h3>
-                        <p>Com um olho treinado para detalhes e proporções faciais, o profissional de estética domina as técnicas de design de sobrancelhas e aplicação de maquiagem..</p>
+                        <p>Com um olho treinado para detalhes e proporções faciais, o profissional de estética domina as
+                            técnicas de design de sobrancelhas e aplicação de maquiagem..</p>
                     </div>
                 </div>
-    
+
                 <div class="experience-item">
                     <i class="fas fa-briefcase"></i>
                     <div class="content">
                         <span>2019 - 2020</span>
                         <h3>Ética Profissional e Ambiente Acolhedor</h3>
-                        <p>Comprometido com os mais altos padrões éticos, o profissional de estética mantém um ambiente acolhedor e seguro para os clientes..</p>
+                        <p>Comprometido com os mais altos padrões éticos, o profissional de estética mantém um ambiente
+                            acolhedor e seguro para os clientes..</p>
                     </div>
                 </div>
-    
+
                 <div class="experience-item">
                     <i class="fas fa-briefcase"></i>
                     <div class="content">
                         <span>2020 - 2021</span>
                         <h3>Paixão pela Indústria da Beleza e Bem-Estar</h3>
-                        <p>Movido pela paixão pela beleza e bem-estar, o profissional de estética encontra alegria em ajudar os outros a alcançarem sua melhor versão..</p>
+                        <p>Movido pela paixão pela beleza e bem-estar, o profissional de estética encontra alegria em
+                            ajudar os outros a alcançarem sua melhor versão..</p>
                     </div>
                 </div>
-    
+
             </div>
 
         </div>
@@ -309,37 +408,43 @@
             <div class="service-item">
                 <i class="fa fa-user-circle" aria-hidden="true"></i>
                 <h3>Tratamentos Faciais Personalizados</h3>
-                <p>Esta categoria pode incluir serviços como limpeza de pele, hidratação facial, tratamentos anti-envelhecimento, entre outros, adaptados às necessidades específicas de cada cliente..</p>
+                <p>Esta categoria pode incluir serviços como limpeza de pele, hidratação facial, tratamentos
+                    anti-envelhecimento, entre outros, adaptados às necessidades específicas de cada cliente..</p>
             </div>
 
             <div class="service-item">
                 <i class="fa fa-sign-language" aria-hidden="true"></i>
                 <h3>Massagens Terapêuticas</h3>
-                <p>Oferecendo uma variedade de massagens, como relaxante, drenagem linfática, massagem modeladora, entre outras, para promover o relaxamento e o bem-estar físico e mental..</p>
+                <p>Oferecendo uma variedade de massagens, como relaxante, drenagem linfática, massagem modeladora, entre
+                    outras, para promover o relaxamento e o bem-estar físico e mental..</p>
             </div>
 
             <div class="service-item">
                 <i class="fa fa-magic" aria-hidden="true"></i>
                 <h3>Design de Sobrancelhas e Depilação</h3>
-                <p>Serviços de design de sobrancelhas para realçar a beleza natural do rosto, juntamente com depilação corporal utilizando diferentes técnicas, como cera, linha ou laser..</p>
+                <p>Serviços de design de sobrancelhas para realçar a beleza natural do rosto, juntamente com depilação
+                    corporal utilizando diferentes técnicas, como cera, linha ou laser..</p>
             </div>
 
             <div class="service-item">
                 <i class="fa fa-female" aria-hidden="true"></i>
                 <h3>Tratamentos Corporais Específicos</h3>
-                <p> Incluindo serviços como esfoliação corporal, envoltórios de corpo, tratamentos para celulite e estrias, focados em melhorar a textura e a aparência da pele em todo o corpo..</p>
+                <p> Incluindo serviços como esfoliação corporal, envoltórios de corpo, tratamentos para celulite e
+                    estrias, focados em melhorar a textura e a aparência da pele em todo o corpo..</p>
             </div>
 
             <div class="service-item">
                 <i class="fa fa-american-sign-language-interpreting" aria-hidden="true"></i>
                 <h3>Manicure e Pedicure</h3>
-                <p>Oferecendo cuidados completos para as mãos e os pés, incluindo manicure clássica, pedicure spa, aplicação de unhas de gel ou acrílico, entre outros serviços de embelezamento das unhas..</p>
+                <p>Oferecendo cuidados completos para as mãos e os pés, incluindo manicure clássica, pedicure spa,
+                    aplicação de unhas de gel ou acrílico, entre outros serviços de embelezamento das unhas..</p>
             </div>
 
             <div class="service-item">
                 <i class="fa fa-eye" aria-hidden="true"></i>
                 <h3>Maquiagem Profissional:</h3>
-                <p>Serviços de maquiagem para ocasiões especiais, como casamentos, festas ou eventos, bem como tutoriais de maquiagem personalizados para ensinar técnicas e truques aos clientes..</p>
+                <p>Serviços de maquiagem para ocasiões especiais, como casamentos, festas ou eventos, bem como tutoriais
+                    de maquiagem personalizados para ensinar técnicas e truques aos clientes..</p>
             </div>
 
         </div>
@@ -364,42 +469,46 @@
                 <li class="button btn" data-filter="design">mais acessados</li>
                 <li class="button btn" data-filter="photography">mais comentados</li>
             </ul>
-    
+
             <div class="box-container">
-    
+
                 <div class="portfolio-item image web">
                     <img src="assets/images/Portfolio/imagem 1.jpg" alt="Portfolio-Image" />
                     <div class="content">
                         <h4>Tratamentos faciais específicos</h4>
                         <p>massagem</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/imagem 1.jpg" class="view-btn"><i class="fas fa-search-plus"></i></a>
+                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/imagem 1.jpg" class="view-btn"><i
+                                class="fas fa-search-plus"></i></a>
                     </div>
                 </div>
-    
+
                 <div class="portfolio-item image web">
                     <img src="assets/images/Portfolio/imagem 2.jpg" alt="Portfolio-Image" />
                     <div class="content">
                         <h4>Massagens erapêuticas</h4>
                         <p>massagem</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/imagem 2.jpg" class="view-btn"><i class="fas fa-search-plus"></i></a>
+                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/imagem 2.jpg" class="view-btn"><i
+                                class="fas fa-search-plus"></i></a>
                     </div>
                 </div>
-    
+
                 <div class="portfolio-item image design">
                     <img src="assets/images/Portfolio/imagem 3.jpg" alt="Portfolio-Image" />
                     <div class="content">
                         <h4>Design de Sobrancelha e depilação</h4>
                         <p>beleza</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/imagem 3.jpg" class="view-btn"><i class="fas fa-search-plus"></i></a>
+                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/imagem 3.jpg" class="view-btn"><i
+                                class="fas fa-search-plus"></i></a>
                     </div>
                 </div>
-    
+
                 <div class="portfolio-item image design">
                     <img src="assets/images/Portfolio/imagem 4.jpg" alt="Portfolio-Image" />
                     <div class="content">
                         <h4>Tratamentos corporais e específicos</h4>
                         <p>massagem</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/imagem 4.jpg" class="view-btn"><i class="fas fa-search-plus"></i></a>
+                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/imagem 4.jpg" class="view-btn"><i
+                                class="fas fa-search-plus"></i></a>
                     </div>
                 </div>
                 <div class="portfolio-item image photography">
@@ -407,23 +516,25 @@
                     <div class="content">
                         <h4>Manicure e pedicure</h4>
                         <p>beleza</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/imagem 5.jpg" class="view-btn"><i class="fas fa-search-plus"></i></a>
+                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/imagem 5.jpg" class="view-btn"><i
+                                class="fas fa-search-plus"></i></a>
                     </div>
                 </div>
-    
+
                 <div class="portfolio-item image photography">
                     <img src="assets/images/Portfolio/imagem 6.jpg" alt="Portfolio-Image" />
                     <div class="content">
                         <h4>Maquiagem profissional</h4>
                         <p>beleza</p>
-                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/imagem 6.jpg" class="view-btn"><i class="fas fa-search-plus"></i></a>
+                        <a data-effect="mfp-newspaper" href="assets/images/Portfolio/imagem 6.jpg" class="view-btn"><i
+                                class="fas fa-search-plus"></i></a>
                     </div>
                 </div>
-    
+
             </div>
-    
+
         </div>
-        
+
     </section>
     <!-------------------- Portfolio Area (End) -------------------->
 
@@ -445,7 +556,8 @@
                     <i class="fas fa-quote-left"></i>
 
                     <p class="comment">
-                        "Fui muito bem recebida na Clínica Belezza Studio. O atendimento foi impecável e me senti cuidada do início ao fim. Recomendo!".
+                        "Fui muito bem recebida na Clínica Belezza Studio. O atendimento foi impecável e me senti
+                        cuidada do início ao fim. Recomendo!".
                     </p>
 
                     <div class="intro">
@@ -460,7 +572,8 @@
                     <i class="fas fa-quote-left"></i>
 
                     <p class="comment">
-                        "Excelente serviço na Clínica Belezza Studio. Profissionais qualificados e ambiente acolhedor. Saí de lá renovada e satisfeita com o resultado!".
+                        "Excelente serviço na Clínica Belezza Studio. Profissionais qualificados e ambiente acolhedor.
+                        Saí de lá renovada e satisfeita com o resultado!".
                     </p>
 
                     <div class="intro">
@@ -475,7 +588,8 @@
                     <i class="fas fa-quote-left"></i>
 
                     <p class="comment">
-                        "Estou impressionada com o profissionalismo da equipe da Clínica Belezza Studio. Fui tratada com respeito e atenção desde a marcação da consulta até o pós-tratamento. Voltarei com certeza!".
+                        "Estou impressionada com o profissionalismo da equipe da Clínica Belezza Studio. Fui tratada com
+                        respeito e atenção desde a marcação da consulta até o pós-tratamento. Voltarei com certeza!".
                     </p>
 
                     <div class="intro">
@@ -490,7 +604,8 @@
                     <i class="fas fa-quote-left"></i>
 
                     <p class="comment">
-                        "Ótima experiência na Clínica Belezza Studio. O ambiente é muito agradável e os tratamentos são eficazes. Recomendo a todos que buscam qualidade e conforto."
+                        "Ótima experiência na Clínica Belezza Studio. O ambiente é muito agradável e os tratamentos são
+                        eficazes. Recomendo a todos que buscam qualidade e conforto."
                     </p>
 
                     <div class="intro">
@@ -505,7 +620,8 @@
                     <i class="fas fa-quote-left"></i>
 
                     <p class="comment">
-                        "Fiquei muito satisfeita com o atendimento na Clínica Belezza Studio. Recebi orientações personalizadas e me senti segura durante todo o procedimento. Com certeza voltarei!"
+                        "Fiquei muito satisfeita com o atendimento na Clínica Belezza Studio. Recebi orientações
+                        personalizadas e me senti segura durante todo o procedimento. Com certeza voltarei!"
                     </p>
 
                     <div class="intro">
@@ -519,7 +635,8 @@
                     <i class="fas fa-quote-left"></i>
 
                     <p class="comment">
-                        "Fiquei muito satisfeita com o atendimento na Clínica Belezza Studio. Recebi orientações personalizadas e me senti segura durante todo o procedimento. Com certeza voltarei!"
+                        "Fiquei muito satisfeita com o atendimento na Clínica Belezza Studio. Recebi orientações
+                        personalizadas e me senti segura durante todo o procedimento. Com certeza voltarei!"
                     </p>
 
                     <div class="intro">
@@ -559,9 +676,11 @@
                             <h5><i class="fas fa-user"></i><span>Metrópoles</span></h5>
                         </div>
                         <a class="main-heading" href="#">Dermatologista revela o que vai bombar no ramo da estética</a>
-                        <p>A dermatologista Giovana Moraes, de São Paulo, criou o conceito de “beautytech”. Ele combina tecnologias avançadas da medicina estética com atendimentos humanizados.
-                        </p>    
-                        <a href="https://www.metropoles.com/colunas/claudia-meireles/dermatologista-revela-o-que-vai-bombar-no-ramo-da-estetica-em-2024" class="btn">Leia mais <i class="fas fa-arrow-right"></i></a>
+                        <p>A dermatologista Giovana Moraes, de São Paulo, criou o conceito de “beautytech”. Ele combina
+                            tecnologias avançadas da medicina estética com atendimentos humanizados.
+                        </p>
+                        <a href="https://www.metropoles.com/colunas/claudia-meireles/dermatologista-revela-o-que-vai-bombar-no-ramo-da-estetica-em-2024"
+                            class="btn">Leia mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -574,10 +693,13 @@
                             <h5><i class="fas fa-calendar-alt"></i><span>9 fev, 2023</span></h5>
                             <h5><i class="fas fa-user"></i><span>EpocaNegocios</span></h5>
                         </div>
-                        <a class="main-heading" href="#">Tecnologia para tratar câncer de pele é aprovada para uso no SUS</a>
-                        <p> Pacientes do Sistema Único de Saúde (SUS) com o tipo de câncer de pele mais comum vão ter um novo tratamento desenvolvido por pesquisadores da Universidade de São Paulo (USP).
-                        </p>    
-                        <a href="https://epocanegocios.globo.com/ciencia-e-saude/noticia/2023/09/tecnologia-para-tratar-cancer-de-pele-e-aprovado-para-uso-no-sus.ghtml" class="btn">Leia mais <i class="fas fa-arrow-right"></i></a>
+                        <a class="main-heading" href="#">Tecnologia para tratar câncer de pele é aprovada para uso no
+                            SUS</a>
+                        <p> Pacientes do Sistema Único de Saúde (SUS) com o tipo de câncer de pele mais comum vão ter um
+                            novo tratamento desenvolvido por pesquisadores da Universidade de São Paulo (USP).
+                        </p>
+                        <a href="https://epocanegocios.globo.com/ciencia-e-saude/noticia/2023/09/tecnologia-para-tratar-cancer-de-pele-e-aprovado-para-uso-no-sus.ghtml"
+                            class="btn">Leia mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -591,9 +713,12 @@
                             <h5><i class="fas fa-user"></i><span>Salao Virtual</span></h5>
                         </div>
                         <a class="main-heading" href="#">Tendências em Maquiagem Sustentável</a>
-                        <p>"Consumidores Buscam Produtos Eco-friendlyNesta notícia, são destacadas as tendências atuais de maquiagem que priorizam ingredientes naturais e embalagens sustentáveis, refletindo a preocupação crescente com o meio ambiente..
-                        </p>    
-                        <a href="https://salaovirtual.org/futuro-maquiagem-ecologica-sustentavel-2024/" class="btn">Leia mais <i class="fas fa-arrow-right"></i></a>
+                        <p>"Consumidores Buscam Produtos Eco-friendlyNesta notícia, são destacadas as tendências atuais
+                            de maquiagem que priorizam ingredientes naturais e embalagens sustentáveis, refletindo a
+                            preocupação crescente com o meio ambiente..
+                        </p>
+                        <a href="https://salaovirtual.org/futuro-maquiagem-ecologica-sustentavel-2024/" class="btn">Leia
+                            mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -607,9 +732,11 @@
                             <h5><i class="fas fa-user"></i><span>Folhavitoria</span></h5>
                         </div>
                         <a class="main-heading" href="#">"Crescimento do Mercado de Beleza Masculina"</a>
-                        <p>A matéria discute o aumento da demanda por serviços estéticos entre homens e como isso está influenciando o desenvolvimento de produtos específicos para o público masculino.
-                        </p>    
-                        <a href="https://www.folhavitoria.com.br/geral/noticia/05/2024/homens-transformam-mercado-de-beleza-e-investem-no-setor" class="btn">Leia mais <i class="fas fa-arrow-right"></i></a>
+                        <p>A matéria discute o aumento da demanda por serviços estéticos entre homens e como isso está
+                            influenciando o desenvolvimento de produtos específicos para o público masculino.
+                        </p>
+                        <a href="https://www.folhavitoria.com.br/geral/noticia/05/2024/homens-transformam-mercado-de-beleza-e-investem-no-setor"
+                            class="btn">Leia mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -623,9 +750,11 @@
                             <h5><i class="fas fa-user"></i><span>Bodyhealthbrasil</span></h5>
                         </div>
                         <a class="main-heading" href="#">"A Ascensão dos Tratamentos Não Invasivos"</a>
-                        <p>Este artigo explora a crescente popularidade de procedimentos estéticos não invasivos, como lasers e preenchimentos dérmicos, que oferecem resultados eficazes.
-                        </p>    
-                        <a href="https://www.bodyhealthbrasil.com/tecnologias-nao-invasivas-uma-tendencia-crescente-em-estetica/" class="btn">Leia mais <i class="fas fa-arrow-right"></i></a>
+                        <p>Este artigo explora a crescente popularidade de procedimentos estéticos não invasivos, como
+                            lasers e preenchimentos dérmicos, que oferecem resultados eficazes.
+                        </p>
+                        <a href="https://www.bodyhealthbrasil.com/tecnologias-nao-invasivas-uma-tendencia-crescente-em-estetica/"
+                            class="btn">Leia mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="swiper-slide blog-item">
@@ -637,10 +766,13 @@
                             <h5><i class="fas fa-calendar-alt"></i><span>19 set, 2023</span></h5>
                             <h5><i class="fas fa-user"></i><span>BBCNews</span></h5>
                         </div>
-                        <a class="main-heading" href="#">Como as unhas alertam sobre saúde e ajudam a detectar doenças</a>
-                        <p>Cuidar das unhas é muito mais do que ir a salões de beleza e esmalterias. Essa parte do corpo,denominada como lâmina ungueal, pode indicar diversos problemas de saúde.
-                        </p>    
-                        <a href="https://www.bbc.com/portuguese/geral-62078113" class="btn">Leia mais <i class="fas fa-arrow-right"></i></a>
+                        <a class="main-heading" href="#">Como as unhas alertam sobre saúde e ajudam a detectar
+                            doenças</a>
+                        <p>Cuidar das unhas é muito mais do que ir a salões de beleza e esmalterias. Essa parte do
+                            corpo,denominada como lâmina ungueal, pode indicar diversos problemas de saúde.
+                        </p>
+                        <a href="https://www.bbc.com/portuguese/geral-62078113" class="btn">Leia mais <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -667,8 +799,9 @@
 
                 <h3>Entrar em contato</h3>
 
-                <p>Estamos aqui para cuidar de você. Entre em contato conosco para agendar sua consulta e descobrir como podemos ajudá-lo a alcançar seus objetivos de beleza e bem-estar.</p>
-    
+                <p>Estamos aqui para cuidar de você. Entre em contato conosco para agendar sua consulta e descobrir como
+                    podemos ajudá-lo a alcançar seus objetivos de beleza e bem-estar.</p>
+
                 <div class="info-item">
                     <h4>Telefone:</h4>
                     <div class="detail">
@@ -680,7 +813,7 @@
                         <p>+55 (61) 98478-5936</p>
                     </div>
                 </div>
-    
+
                 <div class="info-item">
                     <h4>email:</h4>
                     <div class="detail">
@@ -709,19 +842,19 @@
                     </div>
                 </div>
             </div>
-    
+
             <form method="post" class="contact-form" id="contactUs-Form">
-                    
+
                 <input type="text" name="nome" class="box" id="nome" placeholder="nome" required />
                 <input type="email" name="email" class="box" id="email" placeholder="email" required />
                 <input type="text" name="assunto" class="box" id="assunto" placeholder="assunto" required />
                 <textarea cols="30" rows="10" name="comment" id="comment" class="box" placeholder="mensagem"></textarea>
                 <button type="submit" class="btn" name="submit" id="submit">Enviar mensagem</button>
-                
+
                 <span class="alert" id="msg"></span>
-                
+
             </form>
-            
+
         </div>
 
     </section>
@@ -772,7 +905,7 @@
     <script>
         var typed = new Typed('.typing-text', {
 
-            strings: [ '','unhas', 'depilação', 'cabelo', 'maquiagem profissional', 'massagem facial e corporal', 'limpeza e preparação de pele',],
+            strings: ['', 'unhas', 'depilação', 'cabelo', 'maquiagem profissional', 'massagem facial e corporal', 'limpeza e preparação de pele',],
             typeSpeed: 120,
             loop: true
         });
@@ -780,24 +913,35 @@
 
     <!-- Contact-Form Script -->
     <script>
-        jQuery('#contactUs-Form').on('submit',function(e){
-          jQuery('#msg').html('');
-          jQuery('#submit').html('Please wait');
-          jQuery('#submit').attr('disabled',true);
-          jQuery.ajax({
-              url:'assets/php/submit.php',
-              type:'post',
-              data:jQuery('#contactUs-Form').serialize(),
-              success:function(result){
-                  jQuery('#msg').html(result);
-                  jQuery('#submit').html('Submit');
-                  jQuery('#submit').attr('disabled',false);
-                  jQuery('#contactUs-Form')[0].reset();
-              }
-          });
-          e.preventDefault();
+        jQuery('#contactUs-Form').on('submit', function (e) {
+            jQuery('#msg').html('');
+            jQuery('#submit').html('Please wait');
+            jQuery('#submit').attr('disabled', true);
+            jQuery.ajax({
+                url: 'assets/php/submit.php',
+                type: 'post',
+                data: jQuery('#contactUs-Form').serialize(),
+                success: function (result) {
+                    jQuery('#msg').html(result);
+                    jQuery('#submit').html('Submit');
+                    jQuery('#submit').attr('disabled', false);
+                    jQuery('#contactUs-Form')[0].reset();
+                }
+            });
+            e.preventDefault();
+        });
+    </script>
+    <script>
+        // Script to handle the dropdown functionality
+        document.querySelector('.dropdown').addEventListener('mouseover', function () {
+            this.querySelector('.dropdown-content').style.display = 'block';
+        });
+
+        document.querySelector('.dropdown').addEventListener('mouseout', function () {
+            this.querySelector('.dropdown-content').style.display = 'none';
         });
     </script>
 
 </body>
+
 </html>
